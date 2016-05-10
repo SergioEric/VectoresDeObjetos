@@ -8,5 +8,5 @@
 ####Vectores de Objetos
 
 #####Sergio Eric Morales Ricardo
-#####Pedro Diaz Fabras
+#####Pedro Pablo Rosario Vargas
 

@@ -9,5 +9,5 @@ Las relaciones de asociación crean enlaces entre objetos. Estos enlaces no tien
 
 Un ejemplo clásico de relación de asociación es la relación "empresa - empleado". Podemos definir una clase "Empresa" y una clase "Empleado" que nos permitan representar esta relación:
 
-![img](../assets/Empleados.jpg)
+![img](../assets/Persona.png)
 En el ejemplo además vemos que esta relación se ha declarado de multiplicidad indefinida en ambos extremos, lo que quiere decir que un empleado puede trabajar en varias empresas ( casos de pluriempleo) y, por supuesto, que una empresa puede estar formada por más de un empleado.
