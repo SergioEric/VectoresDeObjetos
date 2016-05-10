@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Vectores de Objetos | ACtividad de Programación I</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="./asociation/ejemplos.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2"
+        data-chapter-title="Vectores de Objetos"
+        data-filepath="vectores.md"
+        data-basepath="."
+        data-revision="Tue May 10 2016 18:06:33 GMT-0500 (Hora est. Pacífico, Sudamérica)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introducción
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="relacion.html">
+            
+                
+                    <a href="./relacion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Relacion entre clases
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="add/add.html">
+            
+                
+                    <a href="./add/add.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Agregación
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="add/ejemplos.html">
+            
+                
+                    <a href="./add/ejemplos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        Ejemplos Agregación
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="add/composicion.html">
+            
+                
+                    <a href="./add/composicion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        Ejemplos Composicion
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="asociation/asociacion.html">
+            
+                
+                    <a href="./asociation/asociacion.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Asociacion
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="asociation/ejemplos.html">
+            
+                
+                    <a href="./asociation/ejemplos.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        Ejemplos
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="2" data-path="vectores.html">
+            
+                
+                    <a href="./vectores.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Vectores de Objetos
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >ACtividad de Programación I</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="vectores-de-objetos">Vectores de Objetos</h1>
+<p>La funci&#xF3;n b&#xE1;sica de un arreglo es almacenar en una variable m&#xE1;s de un valor de un mismo tipo de dato, por ejemplo la siguiente declaraci&#xF3;n <code>int numero[8]</code> ; permite almacenar en la variable numero, 8 valores enteros.</p>
+<p>En las clases el concepto de arreglos es el mismo, con la diferencia que ahora se alamcenar&#xE1;n objetos de una clase o de direfentes clases.</p>
+<p>Los objetos se pueden estructurar como un <em>array</em>. Los objetos son variables y tiene las mismas capacidades y atributos que cualquier tipo de variables, por tanto es posible disponer objetos en un array.</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// fichero cuaderno.h</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iostream&quot;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;windows.h&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span>  <span class="hljs-string">&lt;string&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">class</span> Cuaderno
+{
+<span class="hljs-keyword">public</span>:
+    Cuaderno();
+    ~Cuaderno();
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nueva_nota</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-built_in">string</span> memo, <span class="hljs-built_in">string</span> tags)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">editar_nota</span><span class="hljs-params">(<span class="hljs-built_in">string</span> new_memo)</span></span>;
+    <span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">buscar_notas</span><span class="hljs-params">()</span></span>;
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-built_in">string</span> memo;
+    <span class="hljs-built_in">string</span> tags;
+    <span class="hljs-keyword">int</span> id;
+};
+
+<span class="hljs-comment">//fichero cuaderno.cpp</span>
+Cuaderno::Cuaderno(){}
+Cuaderno::~Cuaderno(){}
+<span class="hljs-keyword">void</span> Cuaderno::nueva_nota(<span class="hljs-keyword">int</span> i, <span class="hljs-built_in">string</span> _memo, <span class="hljs-built_in">string</span> _tags){
+    memo = _memo;
+    tags= _tags;
+    id = i;
+}
+<span class="hljs-keyword">void</span> Cuaderno::editar_nota(<span class="hljs-built_in">string</span> new_memo){
+    memo = new_memo;
+}
+<span class="hljs-built_in">string</span> Cuaderno::buscar_notas(){
+    <span class="hljs-keyword">return</span> memo;
+}
+
+<span class="hljs-comment">// la vista</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{    
+    <span class="hljs-keyword">int</span> num;
+    <span class="hljs-keyword">int</span> valor;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Digite el numero de notas a apuntar en el cuaderno\n&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; num;
+    Cuaderno Notas[num];
+    system(<span class="hljs-string">&quot;cls&quot;</span>);
+    <span class="hljs-keyword">do</span>
+    {
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;1)Numero de notas&quot;</span>&lt;&lt;endl;
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;2)Ingresar Notas y Tags&quot;</span>&lt;&lt;endl;
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;3)Editar nota&quot;</span>&lt;&lt;endl;
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;4)Salir &quot;</span>&lt;&lt;endl;
+        <span class="hljs-built_in">cin</span>&gt;&gt;valor;
+        system(<span class="hljs-string">&quot;cls&quot;</span>);
+        <span class="hljs-keyword">if</span> (valor == <span class="hljs-number">1</span>)
+        {
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;===========================\n&quot;</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;num; ++i)
+            {
+                <span class="hljs-built_in">cout</span> &lt;&lt; Notas[i].buscar_notas()&lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+            }
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;===========================\n&quot;</span>;
+        }
+        <span class="hljs-keyword">if</span> (valor == <span class="hljs-number">2</span>)
+        {
+            system(<span class="hljs-string">&quot;cls&quot;</span>);
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; ++i)
+            {
+                <span class="hljs-built_in">string</span> memo;
+                <span class="hljs-built_in">cin</span>.ignore(<span class="hljs-number">256</span>,<span class="hljs-string">&apos;\n&apos;</span>);
+                <span class="hljs-built_in">string</span> tags;
+                <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Digite el memo de la nota:&quot;</span> &lt;&lt; i+<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>; 
+                getline(<span class="hljs-built_in">cin</span>,memo);
+                <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Digite el tags de la nota: &quot;</span>  &lt;&lt; i+<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>; 
+                <span class="hljs-built_in">cin</span> &gt;&gt;tags;
+                Notas[i].nueva_nota(i,memo,tags);
+            }
+        }
+        <span class="hljs-keyword">if</span> (valor == <span class="hljs-number">3</span>)
+        {
+            <span class="hljs-keyword">int</span> n;
+            <span class="hljs-built_in">string</span> new_memo;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Editar Nota ? :\n&quot;</span>;
+            <span class="hljs-built_in">cin</span> &gt;&gt; n;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;El nuevo memo aqui: \n&quot;</span>;
+            <span class="hljs-built_in">cin</span> &gt;&gt;new_memo;
+            Notas[n-<span class="hljs-number">1</span>].editar_nota(new_memo);
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;===========================\n&quot;</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; num; ++i)
+            {
+                <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;NOTA: &quot;</span> &lt;&lt; i+<span class="hljs-number">1</span> &lt;&lt;Notas[i].buscar_notas()&lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+            }
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\n \n&quot;</span>;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;===========================\n&quot;</span>;
+        }
+    } <span class="hljs-keyword">while</span> (valor !=<span class="hljs-number">4</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="./asociation/ejemplos.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Ejemplos"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
