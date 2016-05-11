@@ -7,3 +7,4 @@ Incidiendo en la idea de ocultación de información, el programador de una clas
 
 #####Objetivos
 * Observar que una relación entre clases nos permita agrupar clases con una serie de características ( atributos y metodos ) comunes nos va a permitir reutilizar el código de nuestros programas y simplificar el mantenimiento del mismo.
+* Comprender la importancia que tiene el tema para nuestro desarrollo y crecimiento  en la resolución de problemas que implican el uso exclusivo de las relaciones entre clases

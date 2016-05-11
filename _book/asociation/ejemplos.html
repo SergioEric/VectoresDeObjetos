@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Ejemplos | ACtividad de Programación I</title>
+        <title>Ejemplos | Actividad de Programación I</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -53,7 +53,7 @@
         data-chapter-title="Ejemplos"
         data-filepath="asociation/ejemplos.md"
         data-basepath=".."
-        data-revision="Tue May 10 2016 18:26:01 GMT-0500 (Hora est. Pacífico, Sudamérica)"
+        data-revision="Wed May 11 2016 14:39:01 GMT-0500 (Hora est. Pacífico, Sudamérica)"
         data-innerlanguage="">
     
 
@@ -228,7 +228,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >ACtividad de Programación I</a>
+        <a href="../" >Actividad de Programación I</a>
     </h1>
 </div>
 
@@ -238,15 +238,159 @@
                 
                     <section class="normal" id="section-">
                     
-                        <p><img src="../assets/a1.jpg" alt="img">
-<img src="../assets/a2.jpg" alt="img"></p>
-<p><img src="../assets/a3.jpg" alt="img"></p>
-<p><img src="../assets/a4.jpg" alt="img">
-<img src="../assets/a5.jpg" alt="img">
-<img src="../assets/a6.jpg" alt="img">
-<img src="../assets/a7.jpg" alt="img">
-<img src="../assets/a8.jpg" alt="img">
-<img src="../assets/a9.jpg" alt="img"></p>
+                        <h1 id="ejemplo-de-asociaci&#xF3;n">Ejemplo de Asociaci&#xF3;n</h1>
+<p>Veamos c&#xF3;mo se pueden implementar las relaciones de asociaci&#xF3;n, que, adem&#xE1;s, tienen asociada una multiplicidad distinta de cero en alguno de sus extremos. Implementamos el ejemplo en c++ donde la clase &quot;Pelicula&quot; y la clase &quot;Actor&quot; pose&#xED;an una relaci&#xF3;n de asociaci&#xF3;n...</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> Actor
+{
+<span class="hljs-keyword">public</span>:
+    Actor();
+    Actor(<span class="hljs-keyword">char</span> [],<span class="hljs-keyword">int</span>);
+    ~Actor();
+    <span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">getNombre</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setNombre</span><span class="hljs-params">(<span class="hljs-keyword">char</span> [])</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getNacimiento</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setNacimiento</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+    <span class="hljs-comment">// void mostrarActor();</span>
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">char</span> nombre[<span class="hljs-number">30</span>];
+    <span class="hljs-keyword">int</span> nacimiento;
+};
+</code></pre>
+<p>...lo anterior ser&#xED;a la clase <em>Actor</em> que posee dos atributos base, el nombre y el nacimiento del actor; adem&#xE1;s contiene los m&#xE9;todos accesores a estos atributos.</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">//Fichero Actor.cpp</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstring&gt;</span></span>
+
+<span class="hljs-comment">/*
+establece el valor por defecto de los atributos en el constructor
+*/</span>
+Actor::Actor(){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;nombre, <span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-keyword">this</span>-&gt;nacimiento = <span class="hljs-number">0</span>;
+}
+Actor::Actor(<span class="hljs-keyword">char</span> nombre [],<span class="hljs-keyword">int</span> nacimiento){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;nombre, nombre);
+    <span class="hljs-keyword">this</span>-&gt;nacimiento = nacimiento;
+}
+Actor::~Actor(){}
+<span class="hljs-keyword">char</span> * Actor::getNombre(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;nombre; <span class="hljs-comment">//devuleve el nombre del actor</span>
+}
+<span class="hljs-keyword">void</span> Actor::setNombre(<span class="hljs-keyword">char</span> nombre []){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;nombre, nombre); <span class="hljs-comment">// establece el nombre del actor</span>
+}
+<span class="hljs-keyword">int</span> Actor::getNacimiento(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;nacimiento;<span class="hljs-comment">//devuleve el numero de nacimiento del actor</span>
+}
+<span class="hljs-keyword">void</span> Actor::setNacimiento(<span class="hljs-keyword">int</span> nacimiento){
+    <span class="hljs-keyword">this</span>-&gt;nacimiento = nacimiento;
+}
+</code></pre>
+<pre><code class="lang-cpp">
+<span class="hljs-comment">//Fichero Pelicula.h</span>
+<span class="hljs-comment">/*
+    En este fichero podemos observar c&#xF3;mo los actores que
+    tienen asociados un objeto de la clase Pelicula se representan
+    por medio de un &quot;array&quot; de objetos de la clase &quot;Actor&quot;
+*/</span>
+<span class="hljs-comment">//#include &quot;Actor.h&quot;</span>
+<span class="hljs-keyword">class</span> Pelicula
+{
+<span class="hljs-keyword">public</span>:
+    Pelicula();
+    Pelicula(<span class="hljs-keyword">char</span> [], <span class="hljs-keyword">char</span> [], <span class="hljs-keyword">int</span>);
+    ~Pelicula();
+    <span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">getTitulo</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setTitulo</span><span class="hljs-params">(<span class="hljs-keyword">char</span> [])</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">getDirector</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setDirector</span><span class="hljs-params">(<span class="hljs-keyword">char</span> [])</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getDuracion</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setDuracion</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">char</span> * <span class="hljs-title">mostrarActores</span><span class="hljs-params">(<span class="hljs-keyword">int</span>)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">introduceActor</span><span class="hljs-params">(Actor)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getNumeroActores</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-keyword">private</span>:
+    <span class="hljs-keyword">char</span> titulo[<span class="hljs-number">30</span>];
+    <span class="hljs-keyword">char</span> director[<span class="hljs-number">30</span>];
+    <span class="hljs-keyword">int</span> duracion;
+    <span class="hljs-comment">// Atributos que van a representar la relacion de asociacion</span>
+    Actor actores[<span class="hljs-number">15</span>]; <span class="hljs-comment">// asigno un maximo de 15 actores</span>
+    <span class="hljs-keyword">int</span> numeroActores;
+};
+<span class="hljs-comment">//Fichero pelicula.cpp</span>
+
+Pelicula::Pelicula(){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;titulo,<span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;director,<span class="hljs-string">&quot;&quot;</span>);
+    <span class="hljs-keyword">this</span>-&gt;duracion = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">this</span>-&gt;numeroActores =<span class="hljs-number">0</span>;
+}
+Pelicula::~Pelicula(){}
+<span class="hljs-keyword">char</span> * Pelicula::getTitulo(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;titulo;
+}
+<span class="hljs-keyword">void</span> Pelicula::setTitulo(<span class="hljs-keyword">char</span> nuevo_titulo []){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;titulo,nuevo_titulo);
+}
+<span class="hljs-keyword">char</span> * Pelicula::getDirector(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;director;
+}
+<span class="hljs-keyword">void</span> Pelicula::setDirector(<span class="hljs-keyword">char</span> nuevo_director []){
+    <span class="hljs-built_in">strcpy</span>(<span class="hljs-keyword">this</span>-&gt;director, nuevo_director);
+}
+<span class="hljs-keyword">int</span> Pelicula::getDuracion(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;duracion;
+}
+<span class="hljs-keyword">void</span> Pelicula::setDuracion(<span class="hljs-keyword">int</span> nueva_duracion){
+    <span class="hljs-keyword">this</span>-&gt;duracion = nueva_duracion;
+}
+<span class="hljs-keyword">void</span> Pelicula::introduceActor(Actor actor){
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>-&gt;numeroActores &lt; <span class="hljs-number">15</span>)
+        <span class="hljs-keyword">this</span>-&gt;actores[<span class="hljs-keyword">this</span>-&gt;numeroActores] = actor;
+        <span class="hljs-keyword">this</span>-&gt;numeroActores++;
+}
+<span class="hljs-keyword">int</span> Pelicula::getNumeroActores(){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;numeroActores;
+}
+<span class="hljs-keyword">char</span> * Pelicula::mostrarActores(<span class="hljs-keyword">int</span> id){
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>-&gt;actores[id].getNombre();
+}
+<span class="hljs-comment">/*
+    en los anteriores m&#xE9;todos establecemos simplemente los get y set
+    para cada atributo de la clase.
+    Adem&#xE1;s el metodo &quot;*introduceActor*&quot; que va almacenando cada uno de
+    los actores que le son pasados a &#xE9;ste m&#xE9;todo.
+    Y el m&#xE9;todo &quot;*mostrarActores*&quot; que devuelve el nombre del actor
+    mediante la relacion que se ha hecho en la clase(*Actor actores*) asi
+    es c&#xF3;mo podemos acceder al metodo que est&#xE1; en la *clase Actor* que devuelve el nombre.
+*/</span>
+</code></pre>
+<p>Ahora veamos la implementacion en la vista main</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">//Fichero con la vista main.cpp</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;cstdlib&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-function">Pelicula <span class="hljs-title">war</span><span class="hljs-params">(<span class="hljs-string">&quot;Guerra_mmundial_Z&quot;</span>, <span class="hljs-string">&quot;Brad_Piti&quot;</span>,<span class="hljs-number">120</span>)</span></span>; <span class="hljs-comment">//instacia de la clase Pelicula</span>
+    <span class="hljs-function">Actor <span class="hljs-title">pedro</span><span class="hljs-params">(<span class="hljs-string">&quot;Owen_Wilson&quot;</span>, <span class="hljs-number">1950</span>)</span></span>;<span class="hljs-comment">// nuestros objetos *actores*</span>
+    <span class="hljs-function">Actor <span class="hljs-title">jean</span><span class="hljs-params">(<span class="hljs-string">&quot;george_cluni&quot;</span>, <span class="hljs-number">1970</span>)</span></span>;
+    <span class="hljs-function">Actor <span class="hljs-title">gian</span><span class="hljs-params">(<span class="hljs-string">&quot;Matt_mumford&quot;</span>, <span class="hljs-number">1980</span>)</span></span>;
+    <span class="hljs-function">Actor <span class="hljs-title">sergio</span><span class="hljs-params">(<span class="hljs-string">&quot;Owen_Wilson&quot;</span>, <span class="hljs-number">1965</span>)</span></span>;
+    war.introduceActor(pedro);
+    war.introduceActor(jean);
+    war.introduceActor(gian);
+    war.introduceActor(sergio);
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Nombre de la pelicula es:&quot;</span> &lt;&lt; war.getTitulo()&lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Tiene un aduracion de :&quot;</span> &lt;&lt; war.getDuracion() &lt;&lt; <span class="hljs-string">&quot; minutos \n&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;En la war trabaja: \n&quot;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; war.getNumeroActores() ; i++)
+    {
+        <span class="hljs-built_in">cout</span> &lt;&lt; war.mostrarActores(i);
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
 
                     
                     </section>

@@ -1,4 +1,4 @@
-# ACtividad de Programación I 
+# Actividad de Programación I 
 
 ####Relaciones entre clases:
 - **Asociación**
